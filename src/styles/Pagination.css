@@ -7,8 +7,9 @@
 .pagination__prev,
 .pagination__next {
     height: 20px;
-    width: 50px;
+    width: 60px;
     background-color: orange;
+    border: 1px solid transparent;
     color: #fff;
     margin: 0 5px 15px 0;
     border-radius: 5px;
