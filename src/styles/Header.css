@@ -1,0 +1,21 @@
+.header {
+    height: 10vh;
+    padding-left: 10px;
+}
+
+.header__img {
+    height: 100%;
+}
+
+@media only screen and (min-width:480px)and (orientation:landscape) {
+    .header {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width:480px)and (orientation:landscape) {
+    .header {
+        width: 70%;
+    }
+}

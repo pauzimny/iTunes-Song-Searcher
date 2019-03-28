@@ -1,0 +1,14 @@
+import React from "react";
+import "../styles/Footer.css";
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <span className="footer__line" />
+      <p className="footer__paragraph">Powered by PGS</p>
+      <span className="footer__line" />
+    </footer>
+  );
+};
+
+export default Footer;
