@@ -50,7 +50,7 @@ class App extends Component {
           };
           response.push(search);
         });
-        this.setState({ searchResult: response, search: true });
+        this.setState({ searchResult: response, search: true, value: "" });
       })
       .catch(error => console.log(error));
   };
