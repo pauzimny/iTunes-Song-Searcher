@@ -4,13 +4,18 @@ import SearchForm from "./SearchForm.js";
 import Results from "./Results.js";
 import Footer from "./Footer.js";
 import ResultsValue from "./ResultsValue.js";
+import Pagination from "./Pagination.js";
 import "../styles/App.css";
 
 class App extends Component {
   state = {
     value: "",
     searchResult: [],
-    search: false
+    search: false,
+    nextClick: false,
+    next: [],
+    startResult: 9,
+    endResult: 18
   };
 
   handleInputChange = e => {
@@ -34,7 +39,6 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         let response = [];
         data.results.forEach(result => {
           const search = {
@@ -47,9 +51,32 @@ class App extends Component {
           response.push(search);
         });
         this.setState({ searchResult: response, search: true });
-        console.log(this.state.searchResult);
       })
       .catch(error => console.log(error));
+  };
+
+  handleClickNext = () => {
+    if (this.state.endResult < this.state.searchResult.length) {
+      this.setState({ nextClick: true });
+      this.setState(prevState => ({
+        startResult: prevState.startResult + 9
+      }));
+      this.setState(prevState => ({
+        endResult: prevState.endResult + 9
+      }));
+    }
+  };
+
+  handleClickPrev = () => {
+    if (this.state.endResult > 9) {
+      this.setState({ nextClick: true });
+      this.setState(prevState => ({
+        startResult: prevState.startResult - 9
+      }));
+      this.setState(prevState => ({
+        endResult: prevState.endResult - 9
+      }));
+    }
   };
 
   render() {
@@ -63,6 +90,19 @@ class App extends Component {
       />
     ));
 
+    const page = songs.slice(0, 9);
+
+    const nextpage = this.state.searchResult.map(song => (
+      <Results
+        key={song.id}
+        title={song.song}
+        artist={song.artist}
+        img={song.image}
+        url={song.url}
+      />
+    ));
+    const next = nextpage.slice(this.state.startResult, this.state.endResult);
+
     return (
       <div className="wrapper">
         <Header />
@@ -75,7 +115,15 @@ class App extends Component {
           value={this.state.searchResult.length}
           search={this.state.search}
         />
-        <ul className="main results-container">{songs}</ul>
+        <ul className="main results-container">
+          {this.state.nextClick ? next : page}
+        </ul>
+        {this.state.searchResult.length > 9 ? (
+          <Pagination
+            clickNext={this.handleClickNext}
+            clickPrev={this.handleClickPrev}
+          />
+        ) : null}
         <Footer />
       </div>
     );

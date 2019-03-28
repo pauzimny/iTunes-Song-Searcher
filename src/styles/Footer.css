@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 10vh;
+    flex-basis: 10%;
     color: #fff;
     background-color: #222;
 }
@@ -18,4 +18,10 @@
     width: 25px;
     height: 1px;
     border-top: 1px solid #fff;
+}
+
+@media only screen and (min-width:1280px) and (orientation:landscape) {
+    .footer {
+        flex-basis: 7vh;
+    }
 }
