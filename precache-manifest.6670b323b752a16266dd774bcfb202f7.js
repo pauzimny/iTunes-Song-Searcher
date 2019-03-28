@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "8c2593d6e6aed138e091",
+    "revision": "72d32f7886add3ccd2f1",
     "url": "/pgs-internship/static/css/main.36404206.chunk.css"
   },
   {
-    "revision": "8c2593d6e6aed138e091",
-    "url": "/pgs-internship/static/js/main.b870fa03.chunk.js"
+    "revision": "72d32f7886add3ccd2f1",
+    "url": "/pgs-internship/static/js/main.3e6b7e53.chunk.js"
   },
   {
     "revision": "b7d3869ac55d30c755ab",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/pgs-internship/static/media/logo.ebaacbbe.jpg"
   },
   {
-    "revision": "bf91121619a297b0a6c63c76bbc63758",
+    "revision": "144bff0f25c1d49e047dd7202b1fad78",
     "url": "/pgs-internship/index.html"
   }
 ];
