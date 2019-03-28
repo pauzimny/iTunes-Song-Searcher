@@ -1,3 +1,20 @@
+## Installation 
+
+run `npm install` 
+
+Run `npm start` 
+
+## Description
+
+This App allows to search songs by song title, artist name, etc.
+Results are limited to 100. If there is more than 9 results, pagination appears.
+
+App review in gh-pages (no fetching handled)
+
+--------------------------------------------------------
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
